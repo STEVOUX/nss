@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://infidevs.in/">
-    <title>Redirecting...</title>
+<meta charset="UTF-8">
 
-    <script>
-        window.location.replace("https://infidevs.in/");
-    </script>
+<title>Redirecting...</title>
+
+<!-- Browser cache hints -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<script>
+(() => {
+    /*
+    =====================================================
+    CHANGE ONLY THIS LINE
+    =====================================================
+    */
+    const REDIRECT_URL = "https://infidevs.in/";
+
+    // Remove trailing slash
+    const base = REDIRECT_URL.replace(/\/+$/, "");
+
+    // Preserve path, query and hash
+    const target =
+        base +
+        location.pathname +
+        location.search +
+        location.hash;
+
+    // Prevent redirect loop
+    if (location.href !== target) {
+        window.location.replace(target);
+    }
+})();
+</script>
+
+<noscript>
+<meta http-equiv="refresh" content="0;url=https://keralaspot.in/">
+</noscript>
+
+<style>
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items:center;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#fff;
+    color:#222;
+}
+</style>
+
 </head>
 <body>
-    <p>
-        Redirecting...
-        <a href="https://infidevs.in/">Click here if you are not redirected.</a>
-    </p>
+Redirecting...
 </body>
 </html>
