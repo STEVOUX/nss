@@ -3,58 +3,36 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Redirecting...</title>
-
-<!-- Browser cache hints -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 
+<title>Redirecting...</title>
+
 <script>
-(() => {
-    /*
-    =====================================================
-    CHANGE ONLY THIS LINE
-    =====================================================
-    */
-    const REDIRECT_URL = "https://keralaspot.in/";
+const REDIRECT_URL = "https://keralaspot.in/";
 
-    // Remove trailing slash
-    const base = REDIRECT_URL.replace(/\/+$/, "");
+// Create meta refresh automatically
+const meta = document.createElement("meta");
+meta.httpEquiv = "refresh";
+meta.content = `0;url=${REDIRECT_URL}`;
+document.head.appendChild(meta);
 
-    // Preserve path, query and hash
-    const target =
-        base +
-        location.pathname +
-        location.search +
-        location.hash;
+window.location.replace(REDIRECT_URL);
 
-    // Prevent redirect loop
-    if (location.href !== target) {
-        window.location.replace(target);
-    }
-})();
+window.onload = () => {
+    document.getElementById("redirectLink").href = REDIRECT_URL;
+    document.getElementById("redirectLink").textContent = REDIRECT_URL;
+};
 </script>
 
-<noscript>
-<meta http-equiv="refresh" content="0;url=https://keralaspot.in/">
-</noscript>
-
-<style>
-html,body{
-    margin:0;
-    width:100%;
-    height:100%;
-    display:grid;
-    place-items:center;
-    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:#fff;
-    color:#222;
-}
-</style>
-
 </head>
+
 <body>
-Redirecting...
+<p style="font-family:Arial,sans-serif">
+Redirecting...<br><br>
+If you are not redirected automatically,
+<a id="redirectLink" href="#">click here</a>.
+</p>
 </body>
 </html>
