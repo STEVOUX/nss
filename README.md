@@ -212,7 +212,7 @@ Private Source Repository
 
 <div align="center">
 
-<a href="https://nss.infidevs.in">
+<a href="https://stevoux.github.io/nss/">
 
 <img src="https://img.shields.io/badge/Enter%20The%20Journey-F3E5C8?style=for-the-badge&logo=googlechrome&logoColor=black">
 
